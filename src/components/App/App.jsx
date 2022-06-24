@@ -83,29 +83,17 @@ export class App extends Component {
     const { filter } = this.state;
 
     return (
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'start',
-          alignItems: 'center',
-          fontSize: 40,
-          marginTop: '10px',
-          color: '#010101',
-        }}
-      >
-        <Container>
-          <Title>Phonebook</Title>
-          <ContactForm onSubmit={this.addContact} />
+      <Container>
+        <Title>Phonebook</Title>
+        <ContactForm onSubmit={this.addContact} />
 
-          <Subtitle>Contacts</Subtitle>
-          <Filter onChange={this.handleChangeFilter} filterValue={filter} />
-          <ContactList
-            contacts={this.visibleContacts()}
-            onDeleteContact={this.contactDelete}
-          />
-        </Container>
-      </div>
+        <Subtitle>Contacts</Subtitle>
+        <Filter onChange={this.handleChangeFilter} filterValue={filter} />
+        <ContactList
+          contacts={this.visibleContacts()}
+          onDeleteContact={this.contactDelete}
+        />
+      </Container>
     );
   }
 }
